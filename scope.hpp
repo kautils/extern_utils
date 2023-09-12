@@ -6,7 +6,7 @@ namespace kautil {
 template<typename X>
 struct scope{
     explicit scope(X *x) :m(x){}
-    ~scope(){ m->~X(); }
+    ~scope(){ m->free(); } 
     X * operator &(){return m;}
 private:
     X * m;
